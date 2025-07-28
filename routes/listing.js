@@ -1,5 +1,4 @@
 
-
 const express = require("express");
 const router = express.Router();
 const wrapAsync = require("../utils/wrapAsync.js");
@@ -27,8 +26,6 @@ router
 
 //New Route
 router.get("/new", isLoggedIn, lisitngController.renderNewForm );
-
-
 router
     .route("/:id")
     .get( wrapAsync (lisitngController.showListing))  //Show route
@@ -44,17 +41,6 @@ router
         isOwner,
         wrapAsync(lisitngController.destroyListing)
     );
-    
-
-
-
-
-
-
-
-
-
-
 
 //Edit Route
 router.get("/:id/edit", 
